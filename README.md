@@ -31,13 +31,13 @@ Visit http://localhost:4000
 If you prefer running in Docker:
 
 ```bash
-docker build -t js-dev-assignment .
-docker run -p 4000:4000 js-dev-assignment
+docker build -t csg-javascript-assignment .
+docker run -p 4000:4000 csg-javascript-assignment
 ```
 
 Then open http://localhost:4000
 
-> Tailwind CSS is already compiled into `/public/css/output.css`. No build step is needed.
+> Tailwind CSS is already compiled into `/public/css/tailwind.css`. No build step is needed.
 
 ## 📁 Project Structure
 
