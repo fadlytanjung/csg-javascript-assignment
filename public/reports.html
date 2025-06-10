@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSGI - Reports</title>
+  <link href="/css/tailwind.css" rel="stylesheet">
+  <link href="/css/styles.css" rel="stylesheet">
+  <link rel="icon" href="https://www.csgi.com/wp-content/themes/csg-2022/CSG-favicon-with-glow.ico" sizes="32x32">
+</head>
+<body class="bg-indigo-50 min-h-screen flex items-center justify-center p-6">
+  <div class="w-full max-w-5xl flex flex-col gap-6 bg-white rounded-2xl p-8 border border-indigo-100">
+    <header>
+      <h1 class="text-3xl font-bold text-indigo-700">📊 Reports</h1>
+      <p class="text-indigo-500 mt-1">Statistical overview based on post data</p>
+    </header>
+    <div>
+      <h2 class="text-xl font-semibold text-indigo-700 mb-2">Posts containing <code>"rerum"</code> in body:</h2>
+      <p id="rerum-count" class="text-lg text-indigo-800 font-medium"></p>
+    </div>
+    <div>
+      <h2 class="text-xl font-semibold text-indigo-700 mb-2">Post Count per User</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full table-auto border border-indigo-200 rounded-md overflow-hidden">
+          <thead class="bg-indigo-100 text-left text-indigo-800">
+            <tr>
+              <th class="p-3 font-semibold border-b border-indigo-200">User ID</th>
+              <th class="p-3 font-semibold border-b border-indigo-200">Post Count</th>
+            </tr>
+          </thead>
+          <tbody id="user-report" class="text-indigo-800 bg-white"></tbody>
+          </table>
+          </div>
+      </div>
+  </div>
+  <script type="module" src="/reports.js"></script>
+</body>
+</html>

@@ -1,7 +1,6 @@
 import { fetchPosts } from "./api.js";
-
-const rerumEl = document.getElementById("rerum-count");
-const userReportBody = document.getElementById("user-report");
+import { rerumEl, userReportBody } from "./dom.js";
+import { createUserReportRow } from "./templates.js";
 
 fetchPosts().then((posts) => {
   const rerumPosts = posts.filter((p) => p.body.includes("rerum"));
@@ -12,9 +11,8 @@ fetchPosts().then((posts) => {
     userCount[p.userId] = (userCount[p.userId] || 0) + 1;
   });
 
-  for (const [userId, count] of Object.entries(userCount)) {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `<td class="border p-2">${userId}</td><td class="border p-2">${count}</td>`;
+  Object.entries(userCount).forEach(([userId, count]) => {
+    const tr = createUserReportRow(userId, count);
     userReportBody.appendChild(tr);
-  }
+  });
 });
